@@ -8,6 +8,7 @@ const data = require("./data");
 const MONGODB_URI = "mongodb://localhost:27017/recipe-app";
 
 // Connection to the database "recipe-app"
+///////// REALLY NOT SURE about the .then , doesn't look like inception so is it right ? It's working but ?
 mongoose
   .connect(MONGODB_URI, {
     useCreateIndex: true,
@@ -54,7 +55,7 @@ mongoose
   .then(async () => {
     await mongoose.connection.close()})
 
-    
+
   .catch((error) => {
     console.error("Error connecting to the database", error);
   });
